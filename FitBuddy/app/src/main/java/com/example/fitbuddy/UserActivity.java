@@ -1,6 +1,8 @@
 package com.example.fitbuddy;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.example.fitbuddy.ui.main.SectionsPagerAdapter;
@@ -18,6 +20,9 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -29,9 +34,11 @@ import javax.net.ssl.SSLEngineResult;
 
 public class UserActivity extends AppCompatActivity {
 
+    private static final int MY_PERMISSIONS_REQUEST_ACTIVITY_RECOGNITION = 1;
     private FloatingActionButton signoutbutton;
     GoogleSignInClient mGoogleSignInClient;
     GoogleSignInAccount myaccount;
+    Fragment bmi,nutrition,exercise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +69,18 @@ public class UserActivity extends AppCompatActivity {
 
         myaccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
 
+        // Permission is not granted so asking for permission
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACTIVITY_RECOGNITION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACTIVITY_RECOGNITION , Manifest.permission.ACCESS_FINE_LOCATION , Manifest.permission.BODY_SENSORS},
+                    MY_PERMISSIONS_REQUEST_ACTIVITY_RECOGNITION);
+
+        }
+
+
         ViewPager2 viewPager2 = findViewById(R.id.view_pager);
         viewPager2.setAdapter(new SectionsPagerAdapter(this,this));
 
@@ -76,16 +95,19 @@ public class UserActivity extends AppCompatActivity {
                     case 0:{
                         tab.setText("BMI calculator");
                         tab.setIcon(R.drawable.bmi);
+                        bmi = new BmiFragment();
                         break;
                     }
                     case 1:{
                         tab.setText("Nutrition");
                         tab.setIcon(R.drawable.diet);
+                        exercise = new exerciseFragment();
                         break;
                     }
                     case 2:{
                         tab.setText("Workout");
                         tab.setIcon(R.drawable.stretching);
+                        nutrition = new nutritionFragment();
                         break;
                     }
                 }

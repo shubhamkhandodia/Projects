@@ -2,6 +2,7 @@ package com.example.fitbuddy;
 
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -29,8 +30,8 @@ public class nutritionFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private TextView nutritiontextview;
-    //GoogleSignInAccount currentaccount1;
-    ListView nutrition_list;
+    GoogleSignInAccount currentaccount1;
+    ListView nutrition_list_view_object;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -38,6 +39,7 @@ public class nutritionFragment extends Fragment {
 
     public nutritionFragment() {
         // Required empty public constructor
+
     }
 
     /**
@@ -68,27 +70,31 @@ public class nutritionFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_exercise, container, false);
+        View view = inflater.inflate(R.layout.fragment_nutrition, container, false);
 
-        nutrition_list = view.findViewById(R.id.bmiresult);
 
-//        currentaccount1 = GoogleSignIn.getLastSignedInAccount(getActivity());
-//
-//        try {
-//            if(currentaccount1!=null)
-//            {
-//                nutritiontextview.setText("Welcome to the exercise fragment "+currentaccount1.getDisplayName()+" here are your account details/n"+currentaccount1.getGivenName()+" "+currentaccount1.getEmail());
-//            }
-//        }
-//        catch (Exception e)
-//        {
-//            Toast.makeText(getContext(),"can't get the google account",Toast.LENGTH_LONG).show();
-//        }
+        currentaccount1 = GoogleSignIn.getLastSignedInAccount(getActivity());
 
-        nutrition_list = view.findViewById(R.id.nutrition_list_view);
+        try {
+            if(currentaccount1!=null)
+            {
+                nutritiontextview.setText("Welcome to the exercise fragment "+currentaccount1.getDisplayName()+" here are your account details/n"+currentaccount1.getGivenName()+" "+currentaccount1.getEmail());
+            }
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(getContext(),"can't get the google account",Toast.LENGTH_LONG).show();
+        }
+
+
+        nutrition_list_view_object = view.findViewById(R.id.bmiresult);
+        nutritiontextview = view.findViewById(R.id.textView_nutrition);
+
+        nutritiontextview.setText("Hello "+currentaccount1.getDisplayName()+" here's your calorie fulfillment plan for a week");
+
+        nutrition_list_view_object = view.findViewById(R.id.nutrition_list_view);
 
         ArrayList<String> nutritionlist = new ArrayList<>();
 
@@ -103,7 +109,7 @@ public class nutritionFragment extends Fragment {
 
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1,nutritionlist);
 
-        nutrition_list.setAdapter(stringArrayAdapter);
+        nutrition_list_view_object.setAdapter(stringArrayAdapter);
 
         return view;
     }

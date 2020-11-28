@@ -22,6 +22,8 @@ public class SectionsPagerAdapter extends FragmentStateAdapter {
         super(fm);
     }
 
+    Fragment bmi,nutrition,exercise;
+
     @NonNull
     @Override
     public Fragment createFragment(int position) {

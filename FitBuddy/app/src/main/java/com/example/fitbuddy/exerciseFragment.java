@@ -30,8 +30,8 @@ public class exerciseFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private TextView exercisetextview;
-    //GoogleSignInAccount current_account2;
-    ListView exercise_list;
+    GoogleSignInAccount current_account2;
+    ListView exercise_list_view_object;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -75,38 +75,36 @@ public class exerciseFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_exercise, container, false);
 
-        exercisetextview = view.findViewById(R.id.bmiresult);
+        exercisetextview = view.findViewById(R.id.textView_exercise);
 
-        exercise_list = view.findViewById(R.id.exercise_list_view);
+        current_account2 = GoogleSignIn.getLastSignedInAccount(getActivity());
 
-        ArrayList<String> exerciselist = new ArrayList<>();
+        try {
+            if(current_account2!=null)
+            {
+                exercisetextview.setText("Hello "+current_account2.getDisplayName()+" here's your workout plan for this week");
+            }
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(getContext(),"can't get the google account",Toast.LENGTH_LONG).show();
+        }
 
-        exerciselist.add("Day 1: Legs/Abs");
-        exerciselist.add("Day 2: Chest");
-        exerciselist.add("Day 3: Back/Abs*");
-        exerciselist.add("Day 4: Rest");
-        exerciselist.add("Day 5: Shoulder/Abs*");
-        exerciselist.add("Day 6: Arms");
-        exerciselist.add("Day 7: Rest");
+        exercise_list_view_object = view.findViewById(R.id.exercise_list_view);
 
-        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1,exerciselist);
+        ArrayList<String> exercise_array_list = new ArrayList<>();
 
-        exercise_list.setAdapter(stringArrayAdapter);
+        exercise_array_list.add("Day 1: Legs/Abs");
+        exercise_array_list.add("Day 2: Chest");
+        exercise_array_list.add("Day 3: Back/Abs*");
+        exercise_array_list.add("Day 4: Rest");
+        exercise_array_list.add("Day 5: Shoulder/Abs*");
+        exercise_array_list.add("Day 6: Arms");
+        exercise_array_list.add("Day 7: Rest");
 
-//        current_account2 = GoogleSignIn.getLastSignedInAccount(getActivity());
-//
-//        try {
-//            if(current_account2!=null)
-//            {
-//                exercisetextview.setText("Welcome to the exercise fragment "+current_account2.getDisplayName()+" here are your account details/n"+current_account2.getGivenName()+" "+current_account2.getEmail());
-//            }
-//        }
-//        catch (Exception e)
-//        {
-//            Toast.makeText(getContext(),"can't get the google account",Toast.LENGTH_LONG).show();
-//        }
-//
-//
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1,exercise_array_list);
+
+        exercise_list_view_object.setAdapter(stringArrayAdapter);
 
         return view;
     }
