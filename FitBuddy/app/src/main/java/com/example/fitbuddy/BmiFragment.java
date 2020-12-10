@@ -15,12 +15,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-import java.io.Serializable;
+
 import java.text.DecimalFormat;
 
 /**
@@ -32,7 +32,7 @@ public class BmiFragment extends Fragment{
 
     Double weightdouble,heightdouble,bmi;
 
-    GoogleSignInAccount currentaccount;
+    FirebaseUser currentuser;
 
     TextView bmiuserview;
     EditText height ;
@@ -89,22 +89,20 @@ public class BmiFragment extends Fragment{
         button = (Button) view.findViewById(R.id.bmibutton);
         bmiuserview = (TextView) view.findViewById(R.id.bmiusernameview);
 
-        currentaccount = GoogleSignIn.getLastSignedInAccount(getActivity());
 
-        if(currentaccount!=null)
+        currentuser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        try
         {
-            bmiuserview.setText("hello "+currentaccount.getDisplayName()+" enter your body specs below");
-        }
-
-        try {
-            if(currentaccount!=null)
+            if(currentuser!=null)
             {
-                bmiuserview.setText("hello "+currentaccount.getDisplayName()+" enter your body specs below");
+                bmiuserview.setText("hello "+currentuser.getDisplayName()+" enter your body specs below");
             }
         }
         catch (Exception e)
         {
-            Toast.makeText(getContext(),"can't get the google account",Toast.LENGTH_LONG).show();
+            Snackbar.make(view, "Can't get the firebase account", Snackbar.LENGTH_LONG).show();
         }
 
         weight.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -146,9 +144,7 @@ public class BmiFragment extends Fragment{
             {
                 // Do something in response to button click
                 bmi = weightdouble/Math.pow(heightdouble,2);
-//
-//                bmiresult.setText("Your BMI value is "+df2.format(bmi));
-//                bmiresult.setVisibility(View.VISIBLE);
+
                 bmiresult.setText("Your BMI value is "+df2.format(bmi));
                 bmiresult.setVisibility(View.VISIBLE);
             }

@@ -1,6 +1,7 @@
 import React from "react";
 
-function FoodPill({ name, measure, calories, onFoodPillClick }) {
+function FoodPill({ name, measure, calories, onFoodPillClick }) 
+{
   return (
     <div onClick={() => onFoodPillClick(calories,name)}>
       <span> {name} </span>

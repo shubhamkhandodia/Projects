@@ -16,6 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -99,15 +100,15 @@ public class UserActivity extends AppCompatActivity {
                         break;
                     }
                     case 1:{
-                        tab.setText("Nutrition");
-                        tab.setIcon(R.drawable.diet);
-                        exercise = new exerciseFragment();
-                        break;
-                    }
-                    case 2:{
                         tab.setText("Workout");
                         tab.setIcon(R.drawable.stretching);
                         nutrition = new nutritionFragment();
+                        break;
+                    }
+                    case 2:{
+                        tab.setText("Nutrition");
+                        tab.setIcon(R.drawable.diet);
+                        exercise = new exerciseFragment();
                         break;
                     }
                 }
@@ -119,10 +120,12 @@ public class UserActivity extends AppCompatActivity {
 
     private void signOut()
     {
+        FirebaseAuth.getInstance().signOut();
         mGoogleSignInClient.signOut()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+                        
                         Toast.makeText(UserActivity.this,"Sign out successful",Toast.LENGTH_LONG).show();
 
                         startActivity(new Intent(UserActivity.this,MainActivity.class));

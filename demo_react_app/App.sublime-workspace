@@ -1,0 +1,520 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ne",
+				"nextInt"
+			],
+			[
+				"it",
+				"it"
+			],
+			[
+				"I",
+				"Iterator"
+			],
+			[
+				"si",
+				"size1"
+			],
+			[
+				"Inter",
+				"Integer"
+			],
+			[
+				"inter",
+				"intersection"
+			],
+			[
+				"siz",
+				"size2"
+			],
+			[
+				"in",
+				"input1"
+			],
+			[
+				"min",
+				"min"
+			],
+			[
+				"mi",
+				"min"
+			],
+			[
+				"ma",
+				"max"
+			],
+			[
+				"m",
+				"min"
+			],
+			[
+				"len",
+				"length-1"
+			],
+			[
+				"ans",
+				"answer"
+			],
+			[
+				"answe",
+				"answerleft"
+			],
+			[
+				"a",
+				"arr"
+			],
+			[
+				"r",
+				"return"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"p",
+				"println"
+			],
+			[
+				"tod",
+				"todayAsString"
+			],
+			[
+				"Ca",
+				"Calendar"
+			],
+			[
+				"Compara",
+				"comparator"
+			],
+			[
+				"compa",
+				"Comparator"
+			],
+			[
+				"dest",
+				"destparent"
+			],
+			[
+				"sour",
+				"sourceparent"
+			],
+			[
+				"pa",
+				"parent"
+			],
+			[
+				"sou",
+				"source"
+			],
+			[
+				"cu",
+				"curr"
+			],
+			[
+				"wi",
+				"weight"
+			],
+			[
+				"ele",
+				"element"
+			],
+			[
+				"pr",
+				"prims_mst"
+			],
+			[
+				"ad",
+				"addedge"
+			],
+			[
+				"g",
+				"graph"
+			],
+			[
+				"st",
+				"static"
+			],
+			[
+				"e",
+				"e0"
+			],
+			[
+				"k",
+				"key"
+			],
+			[
+				"n",
+				"node"
+			],
+			[
+				"com",
+				"comparator"
+			],
+			[
+				"mst",
+				"mstset"
+			],
+			[
+				"no",
+				"node1"
+			],
+			[
+				"w",
+				"wt"
+			],
+			[
+				"de",
+				"dest"
+			],
+			[
+				"elemen",
+				"element"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"Com",
+				"Comparator"
+			],
+			[
+				"add",
+				"addEdge"
+			],
+			[
+				"re",
+				"reversedstringpostfix"
+			],
+			[
+				"rev",
+				"reverse"
+			],
+			[
+				"inf",
+				"infix"
+			],
+			[
+				"String",
+				"StringBuffer"
+			],
+			[
+				"po",
+				"pop"
+			],
+			[
+				"char",
+				"charAt"
+			],
+			[
+				"cha",
+				"charAt"
+			],
+			[
+				"sta",
+				"stack"
+			],
+			[
+				"S",
+				"String"
+			],
+			[
+				"star",
+				"starting_vertex"
+			],
+			[
+				"dfs",
+				"dfsrecursive"
+			],
+			[
+				"df",
+				"dfsrecursive"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"iter",
+				"Iterator"
+			],
+			[
+				"pri",
+				"print"
+			],
+			[
+				"o",
+				"out"
+			],
+			[
+				"List",
+				"LinkedList"
+			],
+			[
+				"ver",
+				"Vertex"
+			],
+			[
+				"Bo",
+				"Bob"
+			],
+			[
+				"get",
+				"getAdjVertices"
+			],
+			[
+				"valu",
+				"valueOf"
+			],
+			[
+				"ios",
+				"iostream\tstandard header"
+			],
+			[
+				"type",
+				"typename"
+			],
+			[
+				"unordered",
+				"unordered_multiset"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"reinden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/programming/interview_questions/jump_games/jump_game_1",
+		"/D/programming/interview_questions/jump_games/jump_game_3",
+		"/D/programming/interview_questions/jump_games/jump_game_2",
+		"/D/programming/interview_questions/minimizetheheights.java",
+		"/D/programming/interview_questions/movenegativetooneside.java",
+		"/D/programming/interview_questions/rotatearrayby_k",
+		"/D/programming/interview_questions/unionandintersection.java",
+		"/D/programming/data_structures/week2_priority_queues_and_disjoint_sets/1_make_heap/build_heap.py",
+		"/D/programming/interview_questions/minandmax.java",
+		"/D/programming/interview_questions/kthlargest",
+		"/D/programming/interview_questions/sortarray_containing_zero_one_and_two",
+		"/D/programming/trees/without_recursion/bstTreeMain.java",
+		"/D/programming/avl_trees/avl_trees_using_recursion/avlMain.java",
+		"/D/programming/data_structures/week4_binary_search_trees/2_is_bst/is_bst.java",
+		"/D/programming/java/exception_handling/case1.java",
+		"/D/programming/java/polymorphism/PolymorphismPlusAbstractionExample.java",
+		"/D/programming/java/time.java",
+		"/D/programming/Mathematics.java",
+		"/C/Users/Shubham's pc/Desktop/Main.java",
+		"/C/Users/Shubham's pc/Downloads/WhatsTheWeather/app/src/main/java/com/example/zappycode/whatstheweather/MainActivity.java",
+		"/D/programming/java/network_programming/RMI/RMIClient.java",
+		"/D/programming/java/network_programming/RMI/RMIServer.java",
+		"/D/RMI/RMIClient.java",
+		"/D/programming/java/network_programming/Server.java",
+		"/D/programming/java/network_programming/Client.java",
+		"/D/programming/Graphs/adjacency_list/kruskals.java",
+		"/D/programming/Graphs/adjacency_list/prim.java",
+		"/D/programming/java/IO_and_file_handling/bufferedreader.java",
+		"/D/programming/java/IO_and_file_handling/bufferedwriter.java",
+		"/D/programming/java/IO_and_file_handling/JavaOpenFile.java",
+		"/D/programming/Graphs/adjacency_list/Graphbfsanddfs.java",
+		"/D/programming/Graphs/Graph.java",
+		"/D/programming/java/infix_prefix_postfix/infix_to_postfix.java",
+		"/D/programming/java/infix_prefix_postfix/infix_to_prefix.java",
+		"/D/d folder/ML_dataset_preprocessing/bsf.py",
+		"/D/programming/Graphs/Graphdfs.java",
+		"/D/programming/Graphs/bfs.cpp",
+		"/D/programming/Graphs/GraphMain.java",
+		"/D/black widow tcs codevita problem/BlackWidow.java",
+		"/C/Users/SHUBHA~1/AppData/Local/Temp/kite_tutorial.py",
+		"/D/programming/java/strings/StringMain.java",
+		"/D/programming/interview_questions/Mergetwosortedarrays.java",
+		"/D/programming/trees/isValidBST",
+		"/D/programming/trees/levelorderusingrecursion.java",
+		"/D/programming/linked_lists/sortlinkedlist_(merge_sort)",
+		"/D/programming/linked_lists/copyRandomlistjavafile",
+		"/D/programming/linked_lists/addTwoNumbers.java",
+		"/D/programming/linked_lists/SinglyLinkedList.java",
+		"/D/programming/java/inheritance/multipleinheritance.java",
+		"/D/programming/java/strings/dynamicbindingexample.java",
+		"/D/programming/java/polymorphism/Polymorphism.java",
+		"/D/programming/java/network programming/Client.java",
+		"/D/programming/java/network programming/Server.java",
+		"/D/programming/java/IO and file handling/bufferedwriter.java",
+		"/D/programming/java/IO and file handling/bufferedreader.java",
+		"/D/programming/avl trees/avl trees using recursion/avlMain.java",
+		"/D/programming/recursion and backtracking/infixtopostfix.java",
+		"/D/programming/trees/without recursion/bstTreeMain.java",
+		"/D/programming/java/jdbc/jdbcfile.java",
+		"/D/programming/recursion and backtracking/levelorderusingrecursion.java",
+		"/D/programming/recursion and backtracking/gcd.cpp",
+		"/D/programming/recursion and backtracking/allpossiblebinarystrings.cpp",
+		"/D/programming/sorting_algorithms/insertion sort.cpp",
+		"/D/programming/c++ STL and templates/templates/functiontemplate.cpp",
+		"/D/programming/sorting_algorithms/selectionsort.cpp",
+		"/D/programming/c++ STL and templates/mapandmultimap.cpp",
+		"/D/programming/c++ STL and templates/setandmultiset.cpp",
+		"/D/programming/c++ STL and templates/stldeclarations.cpp"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "App.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 269.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
