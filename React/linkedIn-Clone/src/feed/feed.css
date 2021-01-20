@@ -1,0 +1,22 @@
+.feed{
+	flex:0.6;
+	margin: 0 20px;
+	justify-content: space-between;
+}
+
+.feed_input > form{
+
+	display: flex;
+	width: 100%;
+}
+
+.feed_input > form > input{
+
+	border: solid;
+	flex:1;
+	display: flex;
+	width: 100%;
+	margin-left: 10px;
+	outline-width: 0;
+	font-weight: 600;
+}
