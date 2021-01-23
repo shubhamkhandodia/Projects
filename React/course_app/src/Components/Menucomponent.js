@@ -1,4 +1,4 @@
-import { Card, CardImg, CardImgOverlay, CardText, CardBody,CardTitle } from 'reactstrap'
+import { Card, CardImg, CardImgOverlay,CardTitle } from 'reactstrap'
 import React from 'react'
 
 function RenderMenuItem ({dish, onSelect}) {
@@ -12,7 +12,7 @@ function RenderMenuItem ({dish, onSelect}) {
         );
     }
 
-    const Menucomponent = (props) => {
+    const Menu = (props) => {
 
         const menu = props.dishes.map((dish) => {
             return (
@@ -31,4 +31,4 @@ function RenderMenuItem ({dish, onSelect}) {
         );
     }
 
-export default Menucomponent
+export default Menu

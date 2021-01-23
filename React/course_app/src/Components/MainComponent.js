@@ -1,9 +1,12 @@
 import React from 'react'
-import { Navbar, NavbarBrand } from 'reactstrap';
-import Menucomponent from './Menucomponent';
+import Menu from './Menucomponent'
 import '../App.css';
-import Dishes from '.././shared/dishes';
-import Dishdisplay from './Dishdisplay';
+import Dishes from '.././shared/dishes'
+import Dishdisplay from './Dishdisplay'
+import Header from './Headercomponent'
+import Footer from './Footercomponent'
+import Homepage from './Homecomponent'
+import { Switch , Route , Redirect } from 'react-router-dom'
 
 class MainComponent extends React.Component {
 
@@ -25,14 +28,19 @@ class MainComponent extends React.Component {
     {
         return (
           <div>
-              <Navbar dark color="primary">
-                <div className="container">
-                  <NavbarBrand href="/">Ristorante Con Fusion</NavbarBrand>
-                </div>
-              </Navbar>
-              <div >
-                <Menucomponent dishes={Dishes} onSelect = {(dishId) => this.onDishSelect(dishId)} />
+              <div>
+                <Header />
+                <Switch>
+                  <Route path="./home" component = {Homepage} />
+                {/*without route we used to write 
+                  <Menu dishes={Dishes} onSelect = {(dishId) => this.onDishSelect(dishId)} />
+                  but in this case we can't pass the onClick method as a prop so we'll have to use some other method
+                */}
+                  <Route path="./menu" component = {() => <Menu dishes={Dishes} />} />
+                </Switch>
+                
                 <Dishdisplay dish = {this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
+                <Footer />
               </div>
           </div>
         );
