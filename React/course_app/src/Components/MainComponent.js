@@ -2,10 +2,14 @@ import React from 'react'
 import Menu from './Menucomponent'
 import '../App.css';
 import Dishes from '.././shared/dishes'
+import Comments from '../shared/Comments';
+import Promotions from '../shared/Promotions';
+import Leaders from '../shared/Leaders';
 import Dishdisplay from './Dishdisplay'
 import Header from './Headercomponent'
 import Footer from './Footercomponent'
-import Homepage from './Homecomponent'
+import Home from './Homecomponent'
+import Contact from './Contactcomponent'
 import { Switch , Route , Redirect } from 'react-router-dom'
 
 class MainComponent extends React.Component {
@@ -16,6 +20,9 @@ class MainComponent extends React.Component {
 
         this.state = {
             dishes: Dishes,
+            comments: Comments,
+            promotions: Promotions,
+            leaders: Leaders,
             selectedDish: null
         }
     }
@@ -26,17 +33,23 @@ class MainComponent extends React.Component {
 
     render()
     {
+        const Homepage = () =>{
+          return(
+                <Home dish={this.state.dishes.filter((dish) => dish.featured)[0]}
+              promotion={this.state.promotions.filter((promo) => promo.featured)[0]}
+              leader={this.state.leaders.filter((leader) => leader.featured)[0]}/>
+            );
+        }
+
         return (
           <div>
               <div>
                 <Header />
                 <Switch>
-                  <Route path="./home" component = {Homepage} />
-                {/*without route we used to write 
-                  <Menu dishes={Dishes} onSelect = {(dishId) => this.onDishSelect(dishId)} />
-                  but in this case we can't pass the onClick method as a prop so we'll have to use some other method
-                */}
-                  <Route path="./menu" component = {() => <Menu dishes={Dishes} />} />
+                  <Route path="/home" component = {Homepage} />
+                  <Route exact path="/menu" component = {() => <Menu dishes={Dishes} />} />
+                  <Route exact path = "/contactus" component = {Contact} />
+                  <Redirect to='/home' />
                 </Switch>
                 
                 <Dishdisplay dish = {this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
