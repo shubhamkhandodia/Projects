@@ -1,6 +1,4 @@
-const Comments = 
-[
-    {
+const Comments = [{
         id: 0,
         dishId: 0,
         rating: 5,
