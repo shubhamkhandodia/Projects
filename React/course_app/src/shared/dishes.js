@@ -1,4 +1,4 @@
-const Dishes = [{
+const DISHES = [{
         id: 0,
         name: 'Uthappizza',
         image: '/assets/images/uthappizza.png',
@@ -40,4 +40,4 @@ const Dishes = [{
     }
 ];
 
-export default Dishes
+export default DISHES

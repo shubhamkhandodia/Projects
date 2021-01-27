@@ -1,4 +1,4 @@
-const Comments = [{
+const COMMENTS = [{
         id: 0,
         dishId: 0,
         rating: 5,
@@ -160,4 +160,4 @@ const Comments = [{
     }
 ]
 
-export default Comments;
+export default COMMENTS;

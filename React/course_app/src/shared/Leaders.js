@@ -1,4 +1,4 @@
-const Leaders = [{
+const LEADERS = [{
         id: 0,
         name: 'Shubham Khandodia',
         image: '/assets/images/form.jpg',
@@ -36,4 +36,4 @@ const Leaders = [{
     }
 ];
 
-export default Leaders
+export default LEADERS
