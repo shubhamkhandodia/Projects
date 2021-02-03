@@ -17,6 +17,7 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import {Control, LocalForm, Errors } from 'react-redux-form'
+import Loading from './LoadingComponent'
 
 
 const required = (val) => val && val.length;
@@ -185,7 +186,29 @@ class Dishdisplay extends React.Component {
 
     render()
     {
-        if (this.props.dish != null)
+        if(this.props.isLoading)
+        {
+            return(
+                <div className="container">
+                    <div className="row">
+                        <Loading />
+                    </div>  
+                </div>
+            );
+        }
+
+        else if(this.props.errmess)
+        {
+            return(
+                <div className="container">
+                    <div className="row">
+                        <h4>{this.props.errmess}</h4>
+                    </div>  
+                </div>
+            );
+        }
+
+        else if (this.props.dish != null)
         return (
             <div className="container">
                 <div className="row">

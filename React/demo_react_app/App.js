@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React, {useState , useEffect} from 'react';
 import { TextInput, Button, ImageBackground, StyleSheet, Text, View, FlatList} from 'react-native';
 import FoodShower from './food_shower';
 import Addingcomponent from './Adding_function_file';
@@ -12,9 +12,6 @@ import { Form,Dropdown } from 'react-bootstrap';
 import CanvasJSReact from './canvasjs.react';
 import { ActivityIndicator} from 'react-native';
 
-
-
-//All the examples i've taken here are of functional components
 
 
 var fact = "hello there";
@@ -35,6 +32,125 @@ const List_basics_component = () =>
 
     </View>
   );
+}
+
+function MyComponent() {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+
+  // Note: the empty deps array [] means
+  // this useEffect will run once
+  // similar to componentDidMount()
+  useEffect(() => {
+    fetch("https://api.thedogapi.com/v1/breeds?attach_breed=0")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setItems(result);
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      )
+  }, [])
+
+
+
+
+class Displayitems extends React.Component
+  {
+
+    constructor(props) 
+    {
+      super(props);
+      this.displaydetails = this.displaydetails.bind(this);
+      this.state = {dogclicked: null};
+    }
+
+    displaydetails (props)
+    {
+      this.setState({dogclicked: props});
+    }
+
+
+    render()
+    {
+      
+        if (this.state.dogclicked!=null) 
+        {   
+          return(
+
+          <>
+
+          <ol>
+            {this.props.items.slice(0, 20).map((item) => (
+              <>
+              <li key={item.id} onClick = {() => this.displaydetails(item)}>
+                {item.name}
+                <ul>
+                  <li>
+                    <img src={item.image.url} alt={item.image.id} height = "100" width = "100"></img>
+                  </li>
+                </ul>
+              </li>
+              </>
+            ))}
+          </ol>
+
+          <h1>{this.state.dogclicked.life_span}</h1>
+          </>
+
+          );
+        } 
+        else 
+        {      
+          return(
+
+          <>
+
+          <ol>
+            {this.props.items.slice(0, 20).map((item) => (
+              <>
+              <li key={item.id} onClick = {() => this.displaydetails(item)}>
+                {item.name}
+                <ul>
+                  <li>
+                    <img src={item.image.url} alt={item.image.id} height = "100" width = "100"></img>
+                  </li>
+                </ul>
+              </li>
+              </>
+            ))}
+          </ol>
+
+          <h1>"Dog could not be found"</h1>
+          </>
+
+          );
+        }
+        
+    }
+    
+    
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+
+      <Displayitems items = {items}/>
+      
+    );
+  }
 }
 
 
@@ -140,79 +256,21 @@ const Cafe = () =>
 {
   return (
     <>
-      {
-      	/*<Cat name="Munkustrap" />
-            <Cat name="Spot" />
-            <Pizzatranslator />
       
-            <List_basics_component />
-      
-            <Enternumber />
-      
-            <FoodShowerfunction />
-      
-            <Buttoncomponent name = "i am getting displayed due to this"></Buttoncomponent>
-            <Emojilist />*/
+      	{/*<Cat name="Munkustrap" />
+                    <Cat name="Spot" />
+                    <Pizzatranslator />
+              
+                    <List_basics_component />
+              
+                    <Enternumber />
+              
+                    <FoodShowerfunction />
+              
+                    <Buttoncomponent name = "i am getting displayed due to this"></Buttoncomponent>
+                    <Emojilist />*/}
 
-            <div >
-            <Form >
-			  <Form.Group controlId="formBasicEmail" >
-			    
-			    <Dropdown style={{padding: 10 , margin:10}}>
-				  <Dropdown.Toggle variant="success" id="dropdown-basic">
-				    Country
-				  </Dropdown.Toggle>
-
-				  <Dropdown.Menu>
-				    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-				    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-				    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-				  </Dropdown.Menu>
-				</Dropdown>
-			  </Form.Group>
-
-			  <div style={{flexDirection:'column'}}>
-
-			  <Form.Group controlId="formBasicEmail">
-			    
-			    <Dropdown style={{padding: 10 , margin:10}}>
-				  <Dropdown.Toggle variant="success" id="dropdown-basic">
-				    From
-				  </Dropdown.Toggle>
-
-				  <Dropdown.Menu>
-				    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-				    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-				    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-				  </Dropdown.Menu>
-				</Dropdown>
-
-				<Dropdown style={{padding: 10 , margin:10}}>
-				  <Dropdown.Toggle variant="success" id="dropdown-basic">
-				    To
-				  </Dropdown.Toggle>
-
-				  <Dropdown.Menu>
-				    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-				    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-				    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-				  </Dropdown.Menu>
-				</Dropdown>
-				<Button as="input" type="button" value="Input" title="submit"/>
-
-			  </Form.Group>
-			  </div>
-			  
-			</Form>
-
-			<CanvasJSChart options = {options}
-				/* onRef={ref => this.chart = ref} */
-			/>
-			</div>
-        }
-
-        
-    <data />
+            <MyComponent />
 
     </>
   );
