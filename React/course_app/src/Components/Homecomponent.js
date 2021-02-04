@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap'
 import Loading from './LoadingComponent'
+import baseUrl from '.././shared/baseUrl'
 
 
 function RenderCard({ item, isLoading, errmess }) {
@@ -22,7 +23,7 @@ function RenderCard({ item, isLoading, errmess }) {
     {
         return (
                 <Card>
-                    <CardImg src={item.image} alt={item.name} />
+                    <CardImg src={baseUrl + item.image} alt={item.name} />
                     <CardBody>
                     {/*now for the card title we need to fetch the designation from whatever item we render...but we only have a designation field in leader file so what should we render for other files ? (dishes , comments , promotions).....we'll just put null
 
@@ -47,7 +48,7 @@ function Home(props) {
                     <RenderCard item={props.dish} isLoading = {props.dishesLoading} errmess = {props.dishesErrMess}/>
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.promotion} />
+                    <RenderCard item={props.promotion} isLoading={props.promoLoading} errMess={props.promoErrMess} />
                 </div>
                 <div className="col-12 col-md m-1">
                     <RenderCard item={props.leader} />
