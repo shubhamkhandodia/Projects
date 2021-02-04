@@ -84,7 +84,7 @@ class Formdisplay extends React.Component{
     }
 
     handleSubmit(values) {
-        this.props.addComment(this.props.dishId , values.rating , values.author , values.comment);
+        this.props.postComment(this.props.dishId , values.rating , values.author , values.comment);
     }
 
     render()
@@ -234,7 +234,7 @@ class Dishdisplay extends React.Component {
 
                 <div>
                 
-                <Formdisplay isOpen = { this.state.isModalOpen } toggle = { this.toggleModal } addComment = {this.props.addComment} dishId = {this.props.dish.id} />
+                <Formdisplay isOpen = { this.state.isModalOpen } toggle = { this.toggleModal } postComment = {this.props.postComment} dishId = {this.props.dish.id} />
                 </div>
             </div>
 

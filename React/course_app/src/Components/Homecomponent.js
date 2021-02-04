@@ -25,10 +25,6 @@ function RenderCard({ item, isLoading, errmess }) {
                 <Card>
                     <CardImg src={baseUrl + item.image} alt={item.name} />
                     <CardBody>
-                    {/*now for the card title we need to fetch the designation from whatever item we render...but we only have a designation field in leader file so what should we render for other files ? (dishes , comments , promotions).....we'll just put null
-
-                        so basically this is what our next piece of code is doing i.e if this value exists just render that as a subtitle component or else render null
-                */}
                     <CardTitle>{item.name}</CardTitle>
                     {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null }
                     <CardText>{item.description}</CardText>
